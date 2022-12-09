@@ -1,0 +1,82 @@
+<header class="l-header " id="header" >
+    <nav class="nav bd-grid">
+        <div class="nav__toggle" (click)="showMenu()">
+            <i class='bx bxs-grid '></i>
+        </div>
+        <a href="#" class="nav__logo">VIRTUAL SHOP</a>
+        <div 
+        class="nav__menu"  
+        [ngClass]="{'show': flag ,'':!flag}"    
+        >
+            <ul class="nav__list" (click)="removeMenu()"  >
+                <li class="nav__item"><a [class.selected]="scroll >= 0 && scroll < 50"
+                                         class="nav__link "
+                                         href="#home"
+                                         routerLink="home"
+                                        >Home</a></li>
+                <li class="nav__item"><a [class.selected]="scroll >= 50 "
+                                        href="#featured"
+                                         class="nav__link" 
+                                         >Featured</a></li>
+                <li class="nav__item"><a  href="#women" class="nav__link" name="women">Women</a></li>
+                <li class="nav__item"><a  href="#new" class="nav__link" name="new">New</a></li>
+                <li class="nav__item"><a href="shop.html" class="nav__link" name="shop" #section4>Shop</a></li>
+            </ul>
+        </div>
+        <div class="nav__btns">
+            <!--theme change button-->
+           
+            <i [ngClass]=" {'bx-sun': dark ,'bx-moon':!dark}" class='bx change__theme' id="theme-button" (click)="darkTheme()" ></i>
+            <div class="nav__shop">
+             <button mat-icon-button [matMenuTriggerFor]="menu" >
+                <mat-icon 
+                    [matBadge]="1">
+                    <i class='bx bx-shopping-bag '></i>
+                </mat-icon>
+                <mat-menu #menu="matMenu">
+                    <div class="p-3 divide-y divide-solid">
+                        <div class="pb-3 flex justify-between">
+                            <span class="mr-16">1 Items</span>
+                            <a routerLink="cart">View Cart</a>
+                        </div>
+                        <div class="py-3">
+                            <div class="flex justify-between font-light mb-2">
+                                Keyword x 1
+                                <span class="font-bold">
+                                        {{ "150" | currency }}
+                                </span>
+                            </div>
+                            <div class="flex justify-between font-light mb-2">
+                                Keyword x 1
+                                <span class="font-bold">
+                                        {{ "150" | currency }}
+                                </span>
+                            </div>
+                             <div class="flex justify-between font-light mb-2">
+                                Keyword x 1
+                                <span class="font-bold">
+                                        {{ "150" | currency }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between py-3 font-light">
+                            Total: 
+                            <span class="font-bold">{{"450"|currency}}</span>
+                        </div>
+                        <div class="pt-3 flex justify-between">
+                            <button class="color rounded-full w-9 h-9 ">
+                                <mat-icon><i class='bx bx-trash text-color'></i></mat-icon> 
+                            </button>
+                            <button class="color-2 rounded-full w-9 h-9">
+                                <mat-icon><i class='bx bxs-shopping-bags text-color'></i></mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </mat-menu>
+             </button>   
+            
+                
+            </div>
+        </div>
+    </nav>
+</header>

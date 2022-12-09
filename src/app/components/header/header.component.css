@@ -1,0 +1,14 @@
+/*active link*/
+.selected{
+    position: relative;
+  }
+  .selected::before{
+    content: '';
+    position: absolute;
+    bottom: -.5rem;
+    left: 45%;
+    width: 4px;
+    height: 4px;
+    background-color: var(--black-color);
+    border-radius: 50%;
+  }

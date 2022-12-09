@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mat-badge-content {
+    background: var(--black-color);
+    color: var(--white-color);
+}
+
+.mat-menu-content {
+    background: var(--body-color);
+}
+
+.text-color{
+    color: var(--white-color);
+}
+
+.color {
+    background: var(--black-normal-color);
+    transition: .3s;
+}
+.color:hover{
+    transform: translateY(-.25rem);
+}
+
+.color-2 {
+    background: var(--first-color-alt);
+    transition: .3s;
+}
+.color-2:hover{
+    transform: translateY(-.25rem);
+}
