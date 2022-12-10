@@ -20,12 +20,18 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductsFeaturedComponent } from './pages/home/components/products-featured/products-featured.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CartService } from './services/cart.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
     FooterComponent,
+    ProductsFeaturedComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,7 @@ import { HomeComponent } from './pages/home/home.component';
     MatBadgeModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

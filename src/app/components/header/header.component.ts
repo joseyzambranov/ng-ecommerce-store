@@ -1,4 +1,6 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit, Renderer2 } from '@angular/core';
+import { Cart, CartItem } from 'src/app/models/cart.model';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +12,27 @@ export class HeaderComponent implements OnInit {
   dark = false;
   public selected = false;
   public sections = 4;
-  public scroll!: number; 
+  public scroll! : number;
+  private _cart : Cart={items:[]}
+  itemsQuantity = 0 
+
+  @Input()
+  get cart(): Cart {
+    return this._cart;
+  }
+
+  set cart(cart: Cart) {
+    this._cart = cart;
+
+    this.itemsQuantity = cart.items
+      .map((item) => item.quantity)
+      .reduce((prev, curent) => prev + curent, 0);
+  }
 
   constructor(
-    private renderer: Renderer2
+    private cartService: CartService,   
+    private renderer: Renderer2,
+   
   ) { }
 
   ngOnInit() {
@@ -35,6 +54,14 @@ export class HeaderComponent implements OnInit {
     }else{
       this.renderer.removeClass(document.body, 'dark-theme');
     }    
+  }
+
+  getTotal(items: CartItem[]): number {
+    return this.cartService.getTotal(items);
+  }
+
+  onClearCart(): void {
+    this.cartService.clearCart();
   }
 
 }
