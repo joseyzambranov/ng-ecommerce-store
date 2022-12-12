@@ -23,6 +23,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductsFeaturedComponent } from './pages/home/components/products-featured/products-featured.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
+import { ShopComponent } from './pages/shop/shop.component';
+import { FiltersComponent } from './pages/shop/components/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { CartService } from './services/cart.service';
     FooterComponent,
     ProductsFeaturedComponent,
     CartComponent,
+    ShopComponent,
+    FiltersComponent,
   ],
   imports: [
     BrowserModule,
