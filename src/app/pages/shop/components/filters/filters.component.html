@@ -1,4 +1,47 @@
-<mat-expansion-panel *ngIf="categories">
+<!--<mat-expansion-panel *ngIf="categories">
+    <mat-expansion-panel-header>
+      <mat-panel-title> CATEGORIES </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-selection-list [multiple]="false">
+      <mat-list-option *ngFor="let category of categories" [value]="category">
+        <button>{{ category }}</button>
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-expansion-panel>-->
+
+<!--<mat-card class="mb-4" *ngIf="categories">
+  <div class="flex justify-between">
+    <div>
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+    </div>
+  </div>
+</mat-card>-->
+
+<mat-card class="mb-4 " *ngIf="categories">
+  <div class="flex justify-between">
+    <div>
+    <button mat-button [matMenuTriggerFor]="menu">CATEGORIES</button>
+    <mat-menu #menu="matMenu">
+
+  
+        <mat-selection-list [multiple]="false">
+          <mat-list-option *ngFor="let category of categories" [value]="category">
+            <button>{{ category }}</button>
+          </mat-list-option>
+        </mat-selection-list>
+
+
+    </mat-menu>
+    </div>
+  </div>
+</mat-card>
+
+<!--<mat-card >
+  <mat-expansion-panel *ngIf="categories" class="mb-4" style="width:250px"   >
     <mat-expansion-panel-header>
       <mat-panel-title> CATEGORIES </mat-panel-title>
     </mat-expansion-panel-header>
@@ -8,3 +51,4 @@
       </mat-list-option>
     </mat-selection-list>
   </mat-expansion-panel>
+</mat-card>-->

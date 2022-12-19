@@ -1,11 +1,75 @@
-<mat-drawer-container 
+<!--<mat-drawer-container 
     [autosize]="true"
-    class="min-h-full max-w-7xl mx-auto border-x"
->
+    class="min-h-full max-w-7xl mx-auto border-x">
     <mat-drawer mode="side" opened class="p-6">
         <div>hola que tal</div>
     </mat-drawer>
     <mat-drawer-content>
         
     </mat-drawer-content>
-</mat-drawer-container>
+</mat-drawer-container>-->
+<!--<section class="featured section_test">-->
+    <mat-drawer-container [autosize]="true"
+    class="min-h-full  max-w-7xl mx-auto border-x my-20">
+    <!--<mat-drawer #drawer mode="side" opened class="p-6" mode="side" >
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+            CATEGORIES
+          </button>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+
+      </mat-drawer>      
+      <div class="example-sidenav-content">
+        <button type="button" mat-button (click)="drawer.toggle()">
+          Toggle sidenav
+        </button>
+      </div>-->
+
+      <!--<mat-drawer mode="side" opened style="display: inline-table; overflow:-moz-hidden-unscrollable; position: fixed; margin-top: 75px">
+        <app-filters></app-filters>
+           
+        </mat-drawer>-->
+       
+            <app-filters></app-filters>
+       
+        <mat-drawer-content class="p-6" >
+            <app-filters></app-filters>
+            <app-products-shop (addToCard)="onAddToCarts($event)"></app-products-shop>
+        </mat-drawer-content>
+      </mat-drawer-container>
+
+<!--</section>-->
+
+
+<!--<section class="featured section" id="featured">
+    <h2 class="section-title">FEATURED</h2>
+    <div class="featured__container bd-grid">
+        <article class="sneaker">
+            <div class="sneaker__sale">Sale</div>
+            <img src=".../../../../../assets/img/jean-featured-1.png" alt="" class="sneaker__img">
+            <span class="sneaker__name">Nike Jordan</span>
+            <span class="sneaker__price">$149.99</span>
+            <a class="button-light">Add to cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
+        </article>        
+        <article class="sneaker">
+            <div class="sneaker__sale">Sale</div>
+            <img src=".../../../../../assets/img/jean-featured-1.png" alt="" class="sneaker__img">
+            <span class="sneaker__name">Nike Jordan</span>
+            <span class="sneaker__price">$149.99</span>
+            <a class="button-light">Add to cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
+        </article>        
+        <article class="sneaker">
+            <div class="sneaker__sale">Sale</div>
+            <img src=".../../../../../assets/img/jean-featured-1.png" alt="" class="sneaker__img">
+            <span class="sneaker__name">Nike Jordan</span>
+            <span class="sneaker__price">$149.99</span>
+            <a class="button-light">Add to cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
+        </article>        
+        <article class="sneaker">
+            <div class="sneaker__sale">Sale</div>
+            <img src=".../../../../../assets/img/jean-featured-1.png" alt="" class="sneaker__img">
+            <span class="sneaker__name">Nike Jordan</span>
+            <span class="sneaker__price">$149.99</span>
+            <a class="button-light">Add to cart <i class='bx bx-right-arrow-alt button-icon'></i></a>
+        </article>
+    </div>
+</section>-->
